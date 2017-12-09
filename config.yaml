@@ -1,0 +1,58 @@
+# http://gohugo.io/getting-started/configuration/#yaml-configuration
+
+baseURL: http://keithmo.me/
+title: Haunted Hovel - 闹鬼小屋
+copyright: Copyright &copy; 2016-2018 - Keith Mo
+
+disqusShortname: keithmo  #Disqus shortname
+googleAnalytics: UA-81240089-1  #Google Analytics ID
+
+defaultContentLanguage: zh-cn
+#defaultContentLanguageInSubdir: false
+hasCJKLanguage: true
+languageCode: zh-cn
+
+summaryLength: 50
+enableEmoji: true
+metaDataFormat: yaml
+
+paginate: 10
+paginatePath: page
+
+# https://gohugo.io/content-management/urls/#canonicalization
+canonifyURLs: true
+disablePathToLower: true
+permalinks:
+  post: /:sections/:year/:month/:filename
+
+# http://gohugo.io/content-management/taxonomies/
+preserveTaxonomyNames: true
+taxonomies:
+  - category: categories
+  - tag: tags
+  - series: series
+
+# https://gohugo.io/content-management/syntax-highlighting/
+pygmentsCodeFences: true
+pygmentsCodeFencesGuessSyntax: true
+# https://help.farbox.com/pygments.html
+pygmentsStyle: friendly  # {monokai | friendly | vs | autumn | ...}
+#pygmentsOptions: "linenos=inline"  # {inline | table}
+
+theme: kiera
+#https://themes.gohugo.io/hugo-kiera/
+
+# site variables:
+# http://gohugo.io/variables/site/
+
+author:
+  name: Keith Mo       #Author name
+  github: keithmork     #Github username
+  #gitlab:     #Gitlab username
+  #linkedin:   #LinkedIn username
+  #facebook:   #Facebook username
+  #twitter:    #Twitter username
+  #instagram:  #Instagram username
+
+params:
+  tagline: 守正出奇，一身邪气
