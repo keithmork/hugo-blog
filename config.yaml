@@ -28,9 +28,9 @@ permalinks:
 # http://gohugo.io/content-management/taxonomies/
 preserveTaxonomyNames: true
 taxonomies:
-  - category: categories
-  - tag: tags
-  - series: series
+  category: categories
+  tag: tags
+  series: series
 
 # https://gohugo.io/content-management/syntax-highlighting/
 pygmentsCodeFences: true
