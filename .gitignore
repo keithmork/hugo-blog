@@ -2,6 +2,8 @@
 *.bak
 *.bak/*
 *.old
+.git/
+public
 public/
 themes/
 
