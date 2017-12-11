@@ -1,2 +1,3 @@
 [submodule "public"]
 	ignore = untracked
+    ignore = dirty

@@ -1,6 +1,7 @@
 ---
-categories: ["10000 hours"]
+categories: ["10000 Hours"]
 date: 2016-07-20T02:16:04+08:00
+lastmod: 2017-12-11
 draft: false
 series: ["用 GitHub 搭建个人博客"]
 tags: ["Hugo", "GitHub", "Git"]

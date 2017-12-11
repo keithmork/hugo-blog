@@ -57,3 +57,24 @@ author:
 
 params:
   tagline: 守正出奇，一身邪气
+
+
+# https://gohugo.io/content-management/related/#configure-related-content
+related:
+  # Only include matches with rank >= threshold. This is a normalized rank between 0 and 100.
+  threshold: 80
+  # To get stable "See also" sections we, by default, exclude newer related pages.
+  includeNewer: false
+  # Will lower case keywords in both queries and in the indexes.
+  toLower: false
+  indices:
+    - name: keywords
+      weight: 150
+    - name: author
+      toLower: true
+      weight: 30
+    - name: tags
+      weight: 100
+    - name: date
+      weight: 10
+      pattern: 2017
