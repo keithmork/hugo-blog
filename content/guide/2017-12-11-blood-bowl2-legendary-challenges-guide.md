@@ -2,8 +2,8 @@
 title: "【血碗2传奇版】挑战模式最优解全攻略"
 date: 2017-12-11T19:45:10+08:00
 draft: false
-tags: []
-categories: []
+tags: ["Blood Bowl", "Games Workshop", "Board Game", "Video Game"]
+categories: ["Games"]
 series: []
 ---
 

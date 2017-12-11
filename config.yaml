@@ -24,6 +24,7 @@ canonifyURLs: true
 disablePathToLower: true
 permalinks:
   post: /:sections/:year/:month/:filename
+  guide: /:sections/:year/:month/:filename
 
 # http://gohugo.io/content-management/taxonomies/
 preserveTaxonomyNames: true
