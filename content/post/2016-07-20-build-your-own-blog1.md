@@ -1,7 +1,7 @@
 ---
 categories: ["10000 hours"]
 date: 2016-07-20T02:16:04+08:00
-draft: true
+draft: false
 series: ["用 GitHub 搭建个人博客"]
 tags: ["Hugo", "GitHub", "Git"]
 title: "GitHub + Hugo 搭建个人博客(1) - 发布第一篇博文"
