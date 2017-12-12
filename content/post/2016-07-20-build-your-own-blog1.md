@@ -1,12 +1,11 @@
 ---
-categories: ["10000 Hours"]
-date: 2016-07-20T02:16:04+08:00
-lastmod: 2017-12-11
-draft: false
-series: ["用 GitHub 搭建个人博客"]
-tags: ["Hugo", "GitHub", "Git"]
 title: "GitHub + Hugo 搭建个人博客(1) - 发布第一篇博文"
+date: 2016-07-20T02:16:04+08:00
+draft: false
+categories: [ '10000 Hours' ]
+tags: [ 'Hugo', 'GitHub', 'Git' ]
 ---
+
 
 ## 自己搭博客的N个理由
 
