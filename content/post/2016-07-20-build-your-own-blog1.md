@@ -228,7 +228,12 @@ hugo new post/2016-07-19-first.md
 [[ -z "$1" ]] && echo "Usage: $(basename "$0") FILENAME(without suffix) [SECTIONNAME]" && exit 1
 section_name=${2:-post}
 
-hugo new "${section_name}/$(date +%Y-%m-%d-)$1.md"
+date_prefix=$(date +%Y-%m-%d-)
+file_path="${section_name}/${date_prefix}$1.md"
+hugo new "${file_path}"
+
+sed -i '.bak' "s/slug: ${date_prefix}/slug: /" "content/${file_path}"
+rm -f "content/${file_path}.bak"
 ```
 
 用文本编辑器打开刚才生成的文件，可以看见类似如下内容（YAML格式）：
@@ -275,9 +280,11 @@ title = "2016 07 19 first"
 
 ### 1.6. 编辑模板
 
-如果希望每篇新建的文章都带上特定的 front matter/内容，编辑 `archetype/default.md`。
+在 `archetype/` 下新建 .md 文件，如果文件名跟新建文章时的 SECTIONNAME 一致，则该 section 下的文章都套用这模板。
 
-默认内容：
+找不到匹配的 section 才会套用 `default.md`。
+
+`default.md` 的默认 front matter：
 
 ```yaml
 ---
@@ -287,18 +294,17 @@ draft: true
 ---
 ```
 
-如果希望加上分类、标签等，在2个 `---` 之间加上：
+如果希望每篇新建的文章都带上特定的 front matter，写在2个 `---` 之间，如：
 
 ```yaml
+slug: {{ .Name }}
 tags: []
-categories: [ '10000 Hours' ]
+categories: []
 ```
 
-如果想在文章末尾加上微信打赏/公众号二维码，在下面写：
+如果想带上特定内容，写在 front matter 下面，如：
 
 ```md
-【完】
-
 ![微信收钱二维码](/img/wechat-receive-money-qrcode-0.01.jpg)
 ```
 
@@ -306,8 +312,6 @@ categories: [ '10000 Hours' ]
 
 - 建议用 imagemagick 压缩图片，Hugo 不会帮你压缩。
 - kiera 主题要求图片宽度至少 600px，不够的会自动拉伸。如果图片确实很小，建议编辑一下加上透明底。
-
-如果只想模板应用于某个版块，在 `archetype/` 下新建 md 文件，文件名跟新建文章时的 SECTIONNAME 相同。找不到匹配的 section 才会应用 default.md 的设置。
 
 参考[我的配置](https://github.com/keithmork/hugo-blog/tree/master/archetypes)。
 
@@ -359,18 +363,20 @@ hugo
 ```sh
 #!/bin/bash
 
+push_to_github=${1:-false}
+
 if [[ -d public ]]; then
-    for item in public/*; do
-        [[ "${item}" != ".git" ]] && rm -rf "public/${item}"
-    done
+    rm -rf "public/!(.git|CNAME|googleXXX.html|robots.txt)"  # gooleXXX.html 是 Google Analytics 要求你放在站点根目录用来验证你对站点的所有权的文件。
 fi
 
 hugo
 
-cd public
-git add -A
-git commit -m 'new publish'
-git push
+if [[ "${push_to_github}" == "true" ]]; then
+    cd public
+    git add -A
+    git commit -m 'new publish'
+    git push
+fi
 ```
 
 ---
@@ -380,24 +386,28 @@ git push
 ```sh
 cd public
 git init
-git remote add origin "https://github.com/keithmork/keithmork.github.io"  # 替换成你的 GitHub Pages 仓库地址
+git remote add origin "git@github.com:keithmork/keithmork.github.io.git"  # 替换成你的 GitHub Pages 仓库地址
 git add -A
 git commit -m "first commit"
 git pull
 git push origin master
+
+# 注意：要用 SSH 的仓库地址才能用公钥，如果用了 HTTPS 的仓库地址，必须每次输用户名密码。
 ```
 
 之后会提示输入在 GitHub 注册的邮箱和密码。
 
 提交成功后，浏览器打开`https://keithmork.github.io`，就能看到刚才的页面了。
 
-以后每次提交都这样：（或者装 SourceTree、GitHub Desktop 等客户端）
+以后每次提交都这样：（已经写在上面的发布脚本里）
 
 ```sh
 git add -A
 git commit -m "XXX"
 git push
 ```
+
+或者装 SourceTree、GitHub Desktop 等客户端。
 
 ---
 
@@ -415,37 +425,43 @@ cd ~/.ssh
 ssh-keygen -t rsa -C "keith.mork@gmail.com"
 ```
 
-- 提示`Enter file in which to save the key`时直接回车，使用默认设置
+- 提示 `Enter file in which to save the key` 时直接回车，使用默认设置。
     - 文件名不用改，GitHub 连接时似乎只认 `id_rsa`
-- 提示`Enter passphrase`和`Enter same passphrase again`时，可以直接回车，不使用加密串（否则每次提交时会验证加密串）
+- 提示 `Enter passphrase` 和 `Enter same passphrase again` 时，可以直接回车，不使用口令（否则每次提交时会要求输入口令）。
 
-> [详细教程](https://help.github.com/articles/generating-an-ssh-key/)
+> https://help.github.com/articles/generating-an-ssh-key/
 
 ---
 
-### 2.2. 添加SSH公钥到GitHub
+### 2.2. 添加 SSH 公钥到 GitHub
 
-1. 用Vim编辑公钥文件 
+1. 复制公钥文件（默认 `~/.ssh/id_rsa.pub`）的内容。
+
+2. 登上 GitHub，在个人设置里找到 `SSH and GPG keys`，新建 SSH key，粘贴进去。
+
+3. 取个容易识别的名字，如 `Mac-Home` `PC-Work` 等，保存。
+
+4. 测试是否成功：
 
 ```sh
-vim id_rsa.pub
+ssh -T git@github.com  # 用户名就是git，不用改。
 ```
 
-2. 输入`yy`复制整行，`:q`退出
-
-3. 登上GitHub，在个人设置里找到`SSH and GPG keys`，新建SSH key，粘贴进去  
-取个容易识别的名字，如`Mac-Home` `PC-Work`等，保存
-
-4. 测试是否成功
-
 ```sh
-ssh -T git@github.com    # 就这样不用改
-
 # 如果报错，这样看详细信息：
 ssh -vT git@github.com
-```
-- 看到`Are you sure you want to continue connecting`时输`yes`回车，然后就可以了
 
+# 看到以下就是成功了：（虽然命令返回 1）
+# You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+- 看到 `Are you sure you want to continue connecting` 时输 `yes` 回车，然后就可以了。
+
+如果依然每次都问用户名密码，可能是当初加仓库地址时用了 HTTPS 格式，改为 SSH 格式的地址就好了：
+
+```sh
+git remote set-url origin git@github.com:keithmork/keithmork.github.io.git
+```
 
 ---
 

@@ -1,12 +1,16 @@
 #!/bin/bash
 
+push_to_github=${1:-false}
+
 if [[ -d public ]]; then
     rm -rf "public/!(.git|CNAME|google31f388d9bc251ee9.html|robots.txt)"
 fi
 
 hugo
 
-cd public
-git add -A
-git commit -m 'new publish'
-git push
+if [[ "${push_to_github}" == "true" ]]; then
+    cd public
+    git add -A
+    git commit -m 'new publish'
+    git push
+fi
