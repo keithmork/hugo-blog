@@ -1,13 +1,13 @@
 ---
-title: '{{ replace .TranslationBaseName "-" " " | title }}'
+slug: {{ .Name }}
+title: '{{ replace .Name "-" " " | title }}'
 date: {{ .Date }}
 draft: true
 tags: []
-categories: [ 'Games' ]
+categories:
+- Games
 ---
 
 ---
-
-【完】
 
 ![微信收钱二维码](/img/wechat-receive-money-qrcode-0.01.jpg)

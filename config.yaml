@@ -4,8 +4,8 @@ baseURL: http://keithmo.me/
 title: Haunted Hovel - 闹鬼小屋
 copyright: Copyright &copy; 2016-2018 - Keith Mo
 
-disqusShortname: keithmo  #Disqus shortname
-googleAnalytics: UA-81240089-1  #Google Analytics ID
+disqusShortname: keithmo  # Disqus shortname
+googleAnalytics: UA-81240089-1  # Google Analytics ID
 
 defaultContentLanguage: zh-cn
 #defaultContentLanguageInSubdir: false
@@ -20,14 +20,12 @@ paginate: 10
 paginatePath: page
 
 # https://gohugo.io/content-management/urls/#canonicalization
-canonifyURLs: true
 disablePathToLower: true
 permalinks:
-  post: /:sections/:year/:month/:filename
-  guide: /:sections/:year/:month/:filename
+  post: /:sections/:year/:month/:day/:slug
+  guide: /:sections/:year/:month/:day/:slug
 
 # http://gohugo.io/content-management/taxonomies/
-preserveTaxonomyNames: true
 taxonomies:
   category: categories
   tag: tags
@@ -47,16 +45,16 @@ theme: kiera
 # http://gohugo.io/variables/site/
 
 author:
-  name: Keith Mo       #Author name
-  github: keithmork     #Github username
-  #gitlab:     #Gitlab username
-  #linkedin:   #LinkedIn username
-  #facebook:   #Facebook username
-  #twitter:    #Twitter username
-  #instagram:  #Instagram username
+  name: Keith Mo       # Author name
+  github: keithmork     # Github username
+  #gitlab:     # Gitlab username
+  #linkedin:   # LinkedIn username
+  #facebook:   # Facebook username
+  #twitter:    # Twitter username
+  #instagram:  # Instagram username
 
 params:
-  tagline: 守正出奇，一身邪气
+  tagline: 本站采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用(BY-NC) 4.0 国际许可协议</a> 进行许可。
 
 
 # https://gohugo.io/content-management/related/#configure-related-content
@@ -68,13 +66,13 @@ related:
   # Will lower case keywords in both queries and in the indexes.
   toLower: false
   indices:
-    - name: keywords
-      weight: 150
-    - name: author
-      toLower: true
-      weight: 30
-    - name: tags
-      weight: 100
-    - name: date
-      weight: 10
-      pattern: 2017
+  - name: keywords
+    weight: 150
+  - name: author
+    toLower: true
+    weight: 30
+  - name: tags
+    weight: 100
+  - name: date
+    weight: 10
+    pattern: 2017
