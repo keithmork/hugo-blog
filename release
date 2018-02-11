@@ -3,7 +3,8 @@
 push_to_github=${1:-false}
 
 if [[ -d public ]]; then
-    rm -rf "public/!(.git|CNAME|google31f388d9bc251ee9.html|robots.txt)"
+    GLOBIGNORE=*.git:*CNAME:*google31f388d9bc251ee9.html:*robots.txt
+    rm -rf -v public/*
 fi
 
 hugo

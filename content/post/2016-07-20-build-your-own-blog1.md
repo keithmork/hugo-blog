@@ -234,6 +234,8 @@ hugo new "${file_path}"
 
 sed -i '.bak' "s/slug: ${date_prefix}/slug: /" "content/${file_path}"
 rm -f "content/${file_path}.bak"
+
+# Mac 的 sed -i 的第1个参数必须为备份文件后缀名
 ```
 
 用文本编辑器打开刚才生成的文件，可以看见类似如下内容（YAML格式）：
@@ -366,7 +368,8 @@ hugo
 push_to_github=${1:-false}
 
 if [[ -d public ]]; then
-    rm -rf "public/!(.git|CNAME|googleXXX.html|robots.txt)"  # gooleXXX.html 是 Google Analytics 要求你放在站点根目录用来验证你对站点的所有权的文件。
+    GLOBIGNORE=*.git:*CNAME:*googleXXX.html:*robots.txt
+    rm -rf -v public/*
 fi
 
 hugo
@@ -377,6 +380,9 @@ if [[ "${push_to_github}" == "true" ]]; then
     git commit -m 'new publish'
     git push
 fi
+
+
+# googleXXX.html 是 Google Analytics 要求你放在站点根目录用来验证你对站点的所有权的文件。
 ```
 
 ---
@@ -390,7 +396,7 @@ git remote add origin "git@github.com:keithmork/keithmork.github.io.git"  # 替�
 git add -A
 git commit -m "first commit"
 git pull
-git push origin master
+git push -u origin master
 
 # 注意：要用 SSH 的仓库地址才能用公钥，如果用了 HTTPS 的仓库地址，必须每次输用户名密码。
 ```
@@ -462,6 +468,53 @@ ssh -vT git@github.com
 ```sh
 git remote set-url origin git@github.com:keithmork/keithmork.github.io.git
 ```
+
+
+---
+
+## 3. 发布 Hugo 工程源文件到 GitHub
+
+源文件比生成的发布文件重要得多，必须备份到 GitHub。发布文件丢了随时重新生成，源文件丢了就没了。
+
+1. 在 GitHub 新建仓库，例如叫 `hugo-blog`，不要勾选创建 README.md 。
+
+2. 在工程根目录下创建 `.gitignore` 文件，写上不需要备份的目录和文件，例：
+
+```sh
+public
+themes
+dev
+.git
+.DS_Store
+*.bak
+*.old
+```
+
+3. 如果想写项目简介，创建 README.md 文件。
+
+4. 和之前类似的操作：
+
+```sh
+git init
+git remote add origin "git@github.com:keithmork/hugo-blog.git"  # 替换成你的 GitHub 仓库地址
+git add -A
+git commit -m "first commit"
+git pull
+git push -u origin master
+```
+
+如果忘了写 `.gitignore`，把 public 和 themes 也提交了上去，会发现它们被认为是 submodule （因为里面有 .git 目录）。即使之后设置忽略它们，每次里面的文件有更新时都会出现烦人的子模块状态变更的记录。
+
+解决方法：先把那2个目录复制到别的地方，把它们删掉，写好 `.gitignore`，在 `.git/config` 里删掉 `[submodule]` 相关内容，提交，再把它们搬回来。
+
+
+---
+
+## 结束语
+
+到这里，一个属于自己的静态博客基本成型了。
+
+可能样式、功能或别的细节不能完全令人满意，但那些基本不影响写文章，可以先专注于输出内容，其他留到以后慢慢优化。
 
 ---
 
