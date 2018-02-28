@@ -524,3 +524,8 @@ git push -u origin master
 > http://gohugo.io/overview/usage/  
 > [使用hugo搭建个人博客站点](http://blog.coderzh.com/2015/08/29/hugo/), 2015-08    
 > [Hugo 对比 Jekyll ：两大领先的静态页面生成器之间的比较](https://linux.cn/article-8633-1.html), 2017-06
+> 
+> ---
+
+![微信打赏二维码](http://keithmo.me/img/wechat_reward_qrcode.png)
+

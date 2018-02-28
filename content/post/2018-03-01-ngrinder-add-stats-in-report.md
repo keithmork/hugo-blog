@@ -352,4 +352,6 @@ mvn -Dmaven.test.skip=true clean package
 
 ---
 
-![打赏二维码](http://keithmo.me/img/wechat_reward_qrcode.png)
+![微信打赏二维码](http://keithmo.me/img/wechat_reward_qrcode.png)
+
+

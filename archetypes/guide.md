@@ -8,6 +8,7 @@ categories:
 - Games
 ---
 
+
 ---
 
-![微信收钱二维码](/img/wechat-receive-money-qrcode-0.01.jpg)
+![微信打赏二维码](http://keithmo.me/img/wechat_reward_qrcode.png)
