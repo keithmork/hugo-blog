@@ -1,6 +1,6 @@
 #!/bin/bash
 
-push_to_github=${1:-false}
+push_to_github=${1:-true}
 
 if [[ -d public ]]; then
     GLOBIGNORE=*.git:*CNAME:*google31f388d9bc251ee9.html:*robots.txt

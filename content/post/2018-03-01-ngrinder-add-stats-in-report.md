@@ -24,6 +24,8 @@ nGrinder 以轻量、容易上手、容易扩展的特点在众多性能测试�
 
 下面的代码基本照搬自原帖，删了一些开发通常不感兴趣的字段，改了部分名字。在 nGrinder 3.4.1 测试通过。
 
+如果懒得自己动手，打好的包在这里：https://github.com/keithmork/oh-my-ngrinder
+
 ---
 
 首先，到官方repo https://github.com/naver/ngrinder 克隆源码到本地：
