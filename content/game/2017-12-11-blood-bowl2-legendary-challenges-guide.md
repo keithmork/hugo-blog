@@ -6,10 +6,9 @@ draft: false
 tags:
 - Blood Bowl
 - Games Workshop
-- Board Game
-- Video Game
 categories:
 - Games
+
 ---
 
 

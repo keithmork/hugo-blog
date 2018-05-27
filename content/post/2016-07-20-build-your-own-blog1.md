@@ -11,9 +11,12 @@ tags:
 - Git
 ---
 
-最后更新：
+更新：
 
-- 2018-02-11
+> 最详细的图文教程：[基于GitHub Pages + Hugo构建个人博客](https://zhuzhangliang.github.io/post/hugo/), 2018-03  
+
+- 2018-05-26：主题换成 Even，增加参考教程。
+- 2018-02-11：主题换成 Kiera。
 
 ---
 
@@ -23,13 +26,13 @@ tags:
 - 大多数博客网站都满足不了你：
     - 倒闭/停止服务/被删库时，你多半没备份。
     - 格式互不兼容，导入导出困难，复制粘贴会乱。
-    - 编辑器极其难用。
+    - 富文本编辑器极其难用。
     - 可配置的地方不够，你讨厌的功能一堆。
 - 可以使用 Markdown 写博文：
     - 任何一个文本编辑器都能写，随时随地。
     - 足够沉浸，让你忘记格式，专注内容。
     - 备份容易：
-        - CSDN、博客园、简书、有道云笔记等都支持，到处复制粘贴也能得到大致相同的格式。
+        - GitHub, GitBook, 有道云笔记，CSDN，博客园，简书等都支持，到处复制粘贴也能得到大致相同的格式。
         - 纯文本本身也有足够可读性，网站/软件不支持也无所谓。
 - GitHub 提供免费空间和 CDN，站点放 GitHub 仓库也方便做版本控制。
     - 可以当有道云笔记的图片空间用，弥补 Markdown 笔记无法贴图的缺点。
@@ -61,7 +64,7 @@ brew install git
 下载安装 [Git](https://git-scm.com/) ，全用默认设置，然后打开 Git 终端。
 
 - 默认工作目录是 Git 安装目录下的 mingw64 文件夹。
-- 路径分隔符请使用 `/` 或 `\\`
+- 路径分隔符使用 `/` 或 `\\`
 
 ---
 
@@ -71,23 +74,22 @@ brew install git
 git config --global user.name "keithmork"
 git config --global user.email "keith.mork@gmail.com"
 
-# 替换成你在 GitHub 注册的邮箱和用户名
+# 使用 GitHub 注册的用户名和邮箱
 ```
 
 这台机器上的每个项目提交时默认都会用这些信息。
 
 ---
 
-### 0.4. 创建 GitHub 个人主页
+### 0.4. 创建 GitHub Pages
 
-在 GitHub 上新建仓库(repository)  
+在 GitHub 上新建仓库(repository)：  
 
 - 名字**必须**为 *username*.github.io ，如：`keithmork.github.io`
 
-只要往里面提交一个 `index.html` 文件，就能通过  https://keithmork.github.io 访问了。  
+只要往里面提交一个 `index.html` 文件，就能通过  https://keithmork.github.io 访问了。
 
-不过先不急，继续往下看。
-
+不过除了前端，没几个人愿意碰 HTML 和 CSS，这么建站实在太2000年代了，生成器用起来。
 
 ---
 
@@ -95,7 +97,7 @@ git config --global user.email "keith.mork@gmail.com"
 
 个人网站/博客通常只需要简单的静态页面，[这类工具](https://www.staticgen.com/) 正好可以把 Markdown 文档转换成网页，非常方便。
 
-这里选择 [Hugo](http://gohugo.io/)，特点是生成速度非常快，安装配置简单，还带实时预览。
+这里选择 [Hugo](http://gohugo.io/)，用 Go 写的小工具。特点是生成速度非常快，安装配置也不算复杂。最实用的就是实时预览功能，不需要发布到 Github 就能看到改动。
 
 ### 1.1. 安装
 
@@ -120,26 +122,30 @@ hugo help
 
 ### 1.2. 新建站点
 
-假设想放在当前目录的 `hugo-blog/` 下：
+假设站点文件想放在当前目录的 `hugo-blog/` 目录下：
 
 ```sh
-hugo new site hugo-blog -f yaml
+hugo new site -f yaml hugo-blog
 
-# -f, --format {yaml | json | toml}    指定 config 和 front matter 的格式，默认 toml。
+# -f, --format {yaml|json|toml}    指定 config 和 front matter 的格式，默认 toml。
 # 推荐 yaml 格式。
-
-cd hugo-blog
 ```
 
-会在目录下生成如下内容：
+生成的目录结构如下：
 
-- `archetypes/`：文章模板
-- `content/`：网站内容
-- `data/`：生成网站时的配置
-- `layouts/`：网页框架
-- `static/`：静态资源
-- `themes/`：主题
-- `config.yaml`：配置文件
+```sh
+$ cd hugo-blog
+$ tree
+.
+├── archetypes  # 文章模板
+│   └── default.md  # 默认模板文件
+├── config.yaml  # 主配置文件
+├── content  # 文稿存放目录
+├── data  # 生成网站时的配置
+├── layouts  # 网页框架，会覆盖主题里的设置
+├── static  # 静态资源，这目录下的文件会原封不动的拷到站点根目录下
+└── themes  # 主题
+```
 
 > https://gohugo.io/commands/hugo_new_site/  
 > https://gohugo.io/getting-started/directory-structure/  
@@ -150,63 +156,79 @@ cd hugo-blog
 
 默认不带主题，从 [这里](https://github.com/spf13/hugoThemes) 挑喜欢的下载。
 
-推荐 [CR](http://www.b12.cn/article/NDI2MGIxMg.html)风格（黑白极简）的主题，我用的是 [Kiera](https://themes.gohugo.io/hugo-kiera/) ：
+推荐 [CR](http://www.b12.cn/article/NDI2MGIxMg.html)（黑白极简）风格的主题，我用的是 ~~[Steam](https://themes.gohugo.io/steam/)~~ ~~[Kiera](https://themes.gohugo.io/hugo-kiera/)~~ [Even](https://themes.gohugo.io/hugo-theme-even/) ：
 
 ```sh
-cd themes
-git clone https://github.com/avianto/hugo-kiera.git kiera
-
-cd ..
+git clone https://github.com/olOwOlo/hugo-theme-even themes/even
 ```
 
 ---
 
 ### 1.4 修改配置文件
 
-以 YAML 格式为例：
+以 YAML 格式为例，编辑 config.yaml：
 
 ```yaml
 # 默认会有这3项：
+
 baseURL: http://example.org/  # 替换为你的网址
-languageCode: zh-cn  # 默认 en-us，如果文章内容不是这里指定的编码，Chrome 会提示要不要翻译页面。
+languageCode: zh_CN  # 默认 en-us，如果文章内容不是这里指定的编码，Chrome 会提示要不要翻译页面。
 title: My New Hugo Site  # 替换为你的博客标题
+```
 
-# 推荐在配置文件里指定主题，否则每次都要通过命令行传參。
-# 如果配置文件和命令行都不指定主题，打开网站只能看到一片空白。
-theme: kiera
+推荐在配置文件里指定主题，否则每次都要通过命令行传參。如果配置文件和命令行都不指定主题，打开网站只能看到一片空白。
 
-# 代码语法高亮设置：
-pygmentsCodeFences: true
-pygmentsCodeFencesGuessSyntax: true
-pygmentsStyle: friendly
+```yaml
+theme: even
 
-# 下面是 kiera 的配置。每款主题的配置都不一样，照着主题的文档的指示做就行。
+defaultContentLanguage: zh-cn  # Even主题的i18n下的文件是 zh-CN，这里必须写成 zh-cn，否则hugo不认
+```
 
-params:
-  tagline: 这里替换成你的博客的副标题
+之后
 
-# 设置社交账号，显示为链接按钮。
-author:
-  name: Keith Mo       # Author name
-  github: keithmork     # Github username
-  #gitlab:     # Gitlab username
-  #linkedin:   # LinkedIn username
-  #facebook:   # Facebook username
-  #twitter:    # Twitter username
-  #instagram:  # Instagram username
-
+```yaml
 # 有对应的账号才能用相应功能：
-
 # 评论（Disqus）
 disqusShortname: XXX  # Disqus shortname
 # 站点统计（Google Analytics）
 googleAnalytics: XXX  # Google Analytics ID
 
+# 代码语法高亮设置：
+pygmentsCodeFences: true
+pygmentsCodeFencesGuessSyntax: true
+pygmentsStyle: friendly
 ```
 
-参考[我的完整配置](https://github.com/keithmork/hugo-blog/blob/master/config.yaml)。
+Even 主题特有：
+
+```yaml
+
+
+timeago.js
+
+要写成 zh_CN 才有中文,写死了
+
+https://github.com/hustcc/timeago.js/blob/master/src/locales.js
+```
+
 
 > https://gohugo.io/getting-started/configuration/
+> https://cnodejs.org/topic/576d3463d3baaf401780bb48
+
+---
+
+### 修改样式
+
+layouts 下创建 _default ，从 themes/even/layouts/_复制 default taxonomy.html 和 section.html 过来
+
+taxonomy.html 第4行改成：（去掉 where 和后面的参数，所有section的页面都传给 .Paginate）
+
+```sh
+{{ $paginator := .Paginate (.Data.Pages.ByDate.Reverse) .Site.Params.archivePaginate }}
+```
+
+> https://glennmccomb.com/articles/how-to-build-custom-hugo-pagination/  
+> https://discourse.gohugo.io/t/whats-the-difference-between-site-pages-and-data-pages/2252
 
 ---
 
@@ -222,7 +244,7 @@ hugo new post/2016-07-19-first.md
 
 **这操作经常用，建议写成脚本**：（例如叫做 `new`）
 
-```
+```sh
 #!/bin/bash
 
 [[ -z "$1" ]] && echo "Usage: $(basename "$0") FILENAME(without suffix) [SECTIONNAME]" && exit 1
@@ -304,16 +326,11 @@ tags: []
 categories: []
 ```
 
-如果想带上特定内容，写在 front matter 下面，如：
-
-```md
-![微信收钱二维码](/img/wechat-receive-money-qrcode-0.01.jpg)
-```
+如果想带上特定内容，写在 front matter 下面。
 
 资源文件放在 `static/` 下，==注意==：
 
 - 建议用 imagemagick 压缩图片，Hugo 不会帮你压缩。
-- kiera 主题要求图片宽度至少 600px，不够的会自动拉伸。如果图片确实很小，建议编辑一下加上透明底。
 
 参考[我的配置](https://github.com/keithmork/hugo-blog/tree/master/archetypes)。
 
@@ -524,8 +541,3 @@ git push -u origin master
 > http://gohugo.io/overview/usage/  
 > [使用hugo搭建个人博客站点](http://blog.coderzh.com/2015/08/29/hugo/), 2015-08    
 > [Hugo 对比 Jekyll ：两大领先的静态页面生成器之间的比较](https://linux.cn/article-8633-1.html), 2017-06
-> 
-> ---
-
-![微信打赏二维码](http://keithmo.me/img/wechat_reward_qrcode.png)
-

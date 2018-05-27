@@ -8,8 +8,7 @@ tags:
 - Groovy
 categories:
 - 10000 Hours
-- 性能
-- 测试工具
+- 性能测试工具
 ---
 
 nGrinder 是对 Grinder 的封装，本来 Grinder 只支持 Jython，nGrinder 3.2.1+ 加入了对 Groovy 的支持，用的是改造过的 JUnit 框架，比原版脚本强大得多。
@@ -376,4 +375,23 @@ CSV：
 
 ---
 
-![微信打赏二维码](http://keithmo.me/img/wechat_reward_qrcode.png)
+## 坑
+
+### 停不掉的测试
+
+如果脚本里有语法错误，例如空指针，测试会一直运行，点停止按钮没用。
+
+而且log是跑完测试才会生成压缩包，网页上只会看到 TPS 图表一片空白，好像没在跑，没有log不知发生什么事。去服务器看 agent 或 controller 的log会发现什么也没打出来。
+
+禁用 agent 或停掉 agent 进程没用。
+
+网页点右上的日志监控会发现 controller 在抛数组越界的异常，重启 controller 进程才恢复正常。进刚才停不了的测试下载log可以看到原因：
+
+```log
+2018-03-08 14:10:57,172 ERROR Cannot invoke method setHeaders() on null object
+java.lang.NullPointerException: Cannot invoke method setHeaders() on null object
+    at TestRunner.before(TestRunner.groovy:63) ~[na:na]
+    at net.grinder.scriptengine.groovy.junit.GrinderRunner.run(GrinderRunner.java:170) ~[ngrinder-groovy-3.4.1.jar:na]
+    at net.grinder.scriptengine.groovy.GroovyScriptEngine$GroovyWorkerRunnable.run(GroovyScriptEngine.java:147) ~[ngrinder-groovy-3.4.1.jar:na]
+    at net.grinder.engine.process.GrinderThread.run(GrinderThread.java:118) ~[grinder-core-3.9.1.jar:na]
+```
