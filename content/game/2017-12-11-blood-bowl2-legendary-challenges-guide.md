@@ -1,5 +1,5 @@
 ---
-slug: blood-bowl2-legendary-challenges-guide
+slug: blood-bowl/bb2le-legendary-challenges-guide
 title: "【血碗2传奇版】挑战模式最优解全攻略"
 date: 2017-12-11T19:45:10+08:00
 draft: false
@@ -16,20 +16,18 @@ categories:
 
 目前一共 10 关：
 
-![全部纪录](http://keithmo.me/img/game/blood-bowl2/challenges/records.jpg#mid)
+![全部纪录](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/records.jpg#mid)
 
-（花了不少时间刷出这样的纪录，应该已经是最优解了。数字是扔出的骰子数，你投的和对方投的都算，越少越好。）
+花了不少时间刷出这样的纪录，应该已经是最优解了。数字是扔出的骰子数，你投的和对方投的都算，越少越好。
 
 ---
 
-## 攻略
-
 ### 写在前面
 
-- 不少挑战关里的球员都升级了技能，推荐按左边 Ctrl 键 3 下切换到只显示升级技能的模式，更容易找到需要的人和需要的技能。
-- C 键可以切换镜头视角。
+- 不少挑战关里的球员都升级了技能，推荐按左边 <kbd>Ctrl</kbd> 键 3 下切换到只显示升级技能的模式，更容易找到需要的人和需要的技能。
+- <kbd>C</kbd> 键可以切换镜头视角。
 
-**注意：所有关卡都只有1回合，发现无法达成目标就点右下重来吧。**
+**【注意】所有关卡都只有1回合，发现无法达成目标就点右下重来吧。**
 
 ---
 
@@ -37,14 +35,14 @@ categories:
 
 （road kill，或 roadkill，指被车撞死的动物尸体）
 
-- 目标：控制 Death Roller 撞持球的血仆。
+- 目标：让 Death Roller 闪击持球的血仆。
 - 骰子数纪录：13
 
 Death Roller 升级了3个技能，其中 `Leap`（跳跃） 和 `Sprint`（冲刺） 是过关需要的，`Multiple Block`（多重阻挡） 是干扰项，用不到。
 
 选中压路机后再点1下，弹出菜单里先选 Blitz（闪击），再选 Leap 跳到以下位置：
 
-![撞死他过关](http://keithmo.me/img/game/blood-bowl2/challenges/01-road-kill.jpg)
+![撞死他过关](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/01-road-kill.jpg)
 
 ---
 
@@ -53,30 +51,33 @@ Death Roller 升级了3个技能，其中 `Leap`（跳跃） 和 `Sprint`（冲�
 - 目标：把对面剩下的2个人推出场。
 - 骰子数纪录：24
 
-`Grab`（拉拽）技能教学。所有人都升了 Grab，控制好对方走位就能过关。
+本关是 `Grab`（拉拽）技能教学。所有人都升了 Grab，控制好对方走位就能过关。
 
-【右边】
+#### 【右边】
 
 你的人ST（力量）3，对方 ST 2，完全不用动，所有人原地阻挡（Block）就行。
 
-![全都不用动](http://keithmo.me/img/game/blood-bowl2/challenges/02-clean-up-this-mess-0.jpg)
+![全都不用动](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/02-clean-up-this-mess-0.jpg)
 
 注意：最后一下不要用 Grab，否则只能选场上格子，没法推出场。
 
-![必须不使用Grab](http://keithmo.me/img/game/blood-bowl2/challenges/02-clean-up-this-mess-1.jpg)
+![必须不使用Grab](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/02-clean-up-this-mess-1.jpg)
 
-【左边】
+#### 【左边】
 
 正常玩法也是完全不用动，所有人本来就站在能协助（Assist）的位置（见画面+1力量的提示），可以一路扔2个阻挡骰。
 
-![同样全部不用动](http://keithmo.me/img/game/blood-bowl2/challenges/02-clean-up-this-mess-2.jpg)
+![同样全部不用动](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/02-clean-up-this-mess-2.jpg)
 
 但在挑战模式下这样不是最优，我们已经知道骰子结果了，可以“优化”成这样子：
 
-- 右3先阻挡、跟进（Follow-up），再到右2阻挡，这时左2没人协助，只能扔1颗阻挡骰。
-- 最后左1阻挡把人推下去，让闪击的人也只能扔1颗。
+- 4人那行左起第3个先阻挡、跟进（Follow-up）。
+- 最上方的人阻挡，推给左2，不跟进。
+- 这时左2没人协助，只能扔1颗阻挡骰，拉给左1，不跟进。
+- 左1阻挡，把人向下推，不跟进。
+- 闪击的人1颗阻挡骰把人推出场，完成任务。
 
-![故意制造单骰阻挡](http://keithmo.me/img/game/blood-bowl2/challenges/02-clean-up-this-mess-2a.jpg)
+![故意制造单骰阻挡](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/02-clean-up-this-mess-2a.jpg)
 
 ---
 
@@ -91,7 +92,7 @@ Death Roller 升级了3个技能，其中 `Leap`（跳跃） 和 `Sprint`（冲�
 
 【注意】
 
-- Bombardier 必须站着、没做过任何行动才能发动。
+- Bombardier 技能必须站着、没做过任何行动才能发动。
 - 炸弹的传接规则跟球一样，但接到炸弹的人必须马上扔出去。
 - 炸弹落地就爆炸，站在落点的人如果接不住炸弹就自动击倒，落点周围8格的人4+击倒。
 - 虽然游戏里看不出，传球路线按规则其实有3格宽。覆盖到对方球员所在的格子的任何部分，且该球员站得比球的落点更近就会被抄截。（画面有提示）
@@ -101,7 +102,7 @@ Death Roller 升级了3个技能，其中 `Leap`（跳跃） 和 `Sprint`（冲�
 
 点 Bomma 扔炸弹，长传给右边 Pogoer -> 中间的哥布林 -> 巨魔 -> 右上 -> 左上 -> 左中，就这样逆时针绕场一圈最后把炸弹扔在战舞者**旁边的空地上**。
 
-![最后扔的位置](http://keithmo.me/img/game/blood-bowl2/challenges/03-hot-potato.jpg)
+![最后扔的位置](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/03-hot-potato.jpg)
 
 注意不要炸到旁边的人，那样要多扔几次判定和投伤，不符合我们追求骰子数最小的目标。
 
@@ -113,9 +114,9 @@ Death Roller 升级了3个技能，其中 `Leap`（跳跃） 和 `Sprint`（冲�
 - 为了不炸到自己人，炸弹轨迹会经过哥布林头上，骰子又是6，被你抄截了下来…
 - 于是不用经右边 Pogoer 了，原本的2次传球2次接球变成了2次抄截，省下2个骰子，最终结果 17 个。
 
-![故意让对面抄截](http://keithmo.me/img/game/blood-bowl2/challenges/03-hot-potato-a0.jpg)
+![故意让对面抄截](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/03-hot-potato-a0.jpg)
 
-![然后自己抄截](http://keithmo.me/img/game/blood-bowl2/challenges/03-hot-potato-a1.jpg)
+![然后自己抄截](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/03-hot-potato-a1.jpg)
 
 ---
 
@@ -133,9 +134,9 @@ Death Roller 升级了3个技能，其中 `Leap`（跳跃） 和 `Sprint`（冲�
 
 按照原意，利用 Frenzy（狂热）进行chain push通关：
 
-- 注意：对方右3虽然被3格宽的传球路线覆盖到，但没有站得更近（大家都是2格），不能进行抄截，可以放心传球。
+- 注意：对方右起第3个虽然被3格宽的传球路线覆盖到，但没有站得更近（大家都是2格），不能进行抄截，可以放心传球。
 
-![正常玩法](http://keithmo.me/img/game/blood-bowl2/challenges/04-minimize-risk-a.jpg)
+![正常玩法](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/04-minimize-risk-a.jpg)
 
 但这里破纪录看的是骰子数而不是点数，上面风险最小的做法反而不是“最优”……
 
@@ -143,15 +144,15 @@ Death Roller 升级了3个技能，其中 `Leap`（跳跃） 和 `Sprint`（冲�
 
 A. 传球 -> 2+接球 -> 递传（Handoff） -> 3+接球（很直白的思路，就是风险高一些，最终 7 个）
 
-![比较正常的玩法](http://keithmo.me/img/game/blood-bowl2/challenges/04-minimize-risk-b.jpg)
+![比较正常的玩法](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/04-minimize-risk-b.jpg)
 
 B. 传球 -> 故意给对面抄截，消掉第2个骰子的2 -> 3+接球（风险更高一些，最终结果 6 个）
 
-![风险更高的玩法](http://keithmo.me/img/game/blood-bowl2/challenges/04-minimize-risk-c.jpg)
+![风险更高的玩法](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/04-minimize-risk-c.jpg)
 
 C. 随便1个人闪避（Dodge）消掉3 -> GFI（Going For It，要扔2+的额外2格移动）消掉2 -> 递传 -> 3+接球（真·作弊，最终结果 6 个）
 
-![太假了](http://keithmo.me/img/game/blood-bowl2/challenges/04-minimize-risk-d.jpg)
+![太假了](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/04-minimize-risk-d.jpg)
 
 敏捷高真的是可以为所欲为的……所以看见精灵必须打死。: P
 
@@ -164,9 +165,9 @@ C. 随便1个人闪避（Dodge）消掉3 -> GFI（Going For It，要扔2+的额�
 
 离对面端区最近的黑兽人是个干扰项，你会发现似乎怎么都差1格。
 
-既然兽人靠不住，交给巨魔和哥布林吧。利用chain push把哥布林向上推2格到图中位置，巨魔过来扔队友：
+既然兽人靠不住，交给巨魔和哥布林吧。利用 chain push 把哥布林向上推2格到图中位置，巨魔过来扔队友：
 
-![准备扔队友](http://keithmo.me/img/game/blood-bowl2/challenges/05-orcs-in-need.jpg)
+![准备扔队友](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/05-orcs-in-need.jpg)
 
 这关不难，唯一要注意的是右边2个空位交给右边的 Blitzer 和下面的 Thrower 过去堵，花最少的GFI才能打出最优解。
 
@@ -186,7 +187,7 @@ C. 随便1个人闪避（Dodge）消掉3 -> GFI（Going For It，要扔2+的额�
 
 依然是chain push，如图：
 
-![chain-push 1格就够了](http://keithmo.me/img/game/blood-bowl2/challenges/06-run-orc-run.jpg)
+![chain-push 1格就够了](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/06-run-orc-run.jpg)
 
 ---
 
@@ -201,7 +202,7 @@ C. 随便1个人闪避（Dodge）消掉3 -> GFI（Going For It，要扔2+的额�
 
 - 链球是选择1个方向，扔骰子随机移动：1、2 左前方，3、4 正前方，5、6 右前方，必须用光 MA（移动力）才会停，GFI可选。
 - 如果目标格子被占据，不管是不是自己人、站着还是躺着，都投阻挡骰。
-- 拿链球的人不管因为什么原因倒下，Stun（眩晕）一律算作KO。
+- 拿链球的人不管因为什么原因倒下，至少算作 KO。
 
 这关的骰子序列是462这样循环，由于 Looney 一旦开始走就要连走3步，有些东西要提前规划好：
 
@@ -229,11 +230,11 @@ C. 随便1个人闪避（Dodge）消掉3 -> GFI（Going For It，要扔2+的额�
 
 打完左边打右边（需要GFI 1格），消耗 `4(6|24)624(62|46|24)6`，共 14 个，刚好符合预期。
 
-![先动右下的](http://keithmo.me/img/game/blood-bowl2/challenges/07-anyone-for-bowling-0.jpg)
+![先动右下的](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/07-anyone-for-bowling-0.jpg)
 
 然后动位置最好的右上的Looney，先打左下，复位，再打右上，消耗 `2(46|24)62(46|24)`，共 11 个，符合预期。
 
-![再动右上的](http://keithmo.me/img/game/blood-bowl2/challenges/07-anyone-for-bowling-1.jpg)
+![再动右上的](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/07-anyone-for-bowling-1.jpg)
 
 左边2人位置不好，每人只能打1个。
 
@@ -241,7 +242,7 @@ C. 随便1个人闪避（Dodge）消掉3 -> GFI（Going For It，要扔2+的额�
 
 全部加起来 37 个，和理论最小值一模一样，设计这关卡的人太厉害了。
 
-![最后是左上和左下](http://keithmo.me/img/game/blood-bowl2/challenges/07-anyone-for-bowling-2.jpg)
+![最后是左上和左下](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/07-anyone-for-bowling-2.jpg)
 
 ---
 
@@ -257,13 +258,13 @@ C. 随便1个人闪避（Dodge）消掉3 -> GFI（Going For It，要扔2+的额�
 
 原帖里难度更大，还要考虑保护持球队员、下回合自己队员不能站在容易被推出场的位置等等。
 
-首先chain push把黑兽人推过去：
+首先 chain push 把黑兽人推过去：
 
-![又是chain push](http://keithmo.me/img/game/blood-bowl2/challenges/08-get-lost-0.jpg)
+![又是chain push](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/08-get-lost-0.jpg)
 
 黑兽人阻挡上面的精灵，推到场边。正常游戏里选择不跟进是较优的走法，可以给下面 Blitzer 提供协助：
 
-![不跟进](http://keithmo.me/img/game/blood-bowl2/challenges/08-get-lost-1.jpg)
+![不跟进](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/08-get-lost-1.jpg)
 
 然后左2 Blitzer 阻挡，把左2精灵推向左上，跟进。
 
@@ -271,13 +272,13 @@ Thrower 上去补位，左1 Blitzer 阻挡，把其中1个推出去。
 
 巨魔扔3个阻挡骰把贴着下方 Blitzer 的精灵打倒或推开，这样不用闪避就能闪击，把剩下的精灵推出场，清空了前面的进攻路线。
 
-![前面空出来了](http://keithmo.me/img/game/blood-bowl2/challenges/08-get-lost-2.jpg)
+![前面空出来了](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/08-get-lost-2.jpg)
 
 在正常游戏里接下来就是不跟进，用剩下的2格走到前面，防止中间几个精灵过来把进攻路线堵得很死。还有右下的黑兽人也走到左边，防止右边的精灵绕后面靠近Thrower等等。
 
 但在挑战里我们只考虑减少骰子数，“最优”的走法就是黑兽人故意跟进，之后走成这样子：
 
-![站在场边的几个人其实挺危险](http://keithmo.me/img/game/blood-bowl2/challenges/08-get-lost-a1.jpg)
+![站在场边的几个人其实挺危险](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/08-get-lost-a1.jpg)
 
 ---
 
@@ -292,9 +293,9 @@ Thrower 上去补位，左1 Blitzer 阻挡，把其中1个推出去。
 
 超级简单，只需要传了球之后向前推2格：
 
-![推1下，摆好阵](http://keithmo.me/img/game/blood-bowl2/challenges/09-wooden-barrier-0.jpg)
+![推1下，摆好阵](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/09-wooden-barrier-0.jpg)
 
-![再推1下，搞定](http://keithmo.me/img/game/blood-bowl2/challenges/09-wooden-barrier-1.jpg)
+![再推1下，搞定](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/09-wooden-barrier-1.jpg)
 
 上面就是挑战模式的最优解，而且在大部分人在普通游戏里也会这么玩，风险看上去已经足够小（不算最后连续3下闪避+2下GFI）。
 
@@ -302,7 +303,7 @@ Thrower 上去补位，左1 Blitzer 阻挡，把其中1个推出去。
 
 Blitzer 闪击完不跟进，闪避出来走到上面，其他2人堵上剩下的2个空位，用中间的线锋发起阻挡就能扔3个骰子了。
 
-![高手的走法](http://keithmo.me/img/game/blood-bowl2/challenges/09-wooden-barrier-a.jpg)
+![高手的走法](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/09-wooden-barrier-a.jpg)
 
 ---
 
@@ -319,27 +320,27 @@ Blitzer 闪击完不跟进，闪避出来走到上面，其他2人堵上剩下�
 
 头2步，一般人第一反应都是把 Runner 往上再推1格，但这里推的是 Troll Slayer。
 
-![等会制造出一条走廊](http://keithmo.me/img/game/blood-bowl2/challenges/10-dwarfs-can-also-do-it-0.jpg)
+![等会制造出一条走廊](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/10-dwarfs-can-also-do-it-0.jpg)
 
 中间的 Blocker 阻挡，chain push 1格。右边3个人上去排成1列。最左边的 Runner 其实不应该在那里，正常游戏里应该在后场捡球。这里原本会用 Blitzer GFI 1格走上去。
 
-![本来这么走](http://keithmo.me/img/game/blood-bowl2/challenges/10-dwarfs-can-also-do-it-1.jpg)
+![本来这么走](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/10-dwarfs-can-also-do-it-1.jpg)
 
 既然多给了个 Runner 那就用呗，不需要 GFI 省下1个骰子。左边 Blocker 又 chain push 了 1 格，接下来的事很清楚了。
 
-![历史性时刻来了](http://keithmo.me/img/game/blood-bowl2/challenges/10-dwarfs-can-also-do-it-2.jpg)
+![历史性时刻来了](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/10-dwarfs-can-also-do-it-2.jpg)
 
 这套路相当厉害，经常可以扔3个阻挡骰，风险控制得很好。因此在挑战模式下肯定不是“最优”的。
 
-![准备达阵](http://keithmo.me/img/game/blood-bowl2/challenges/10-dwarfs-can-also-do-it-3.jpg)
+![准备达阵](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/10-dwarfs-can-also-do-it-3.jpg)
 
 后来终于把挑战模式的“最优解”试出来了，就是一开始按“正常思维”走，也就是什么也不多想，有机会就往上推，然后数好格子，所有人上去补位。
 
-![还差2步](http://keithmo.me/img/game/blood-bowl2/challenges/10-dwarfs-can-also-do-it-4.jpg)
+![还差2步](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/10-dwarfs-can-also-do-it-4.jpg)
 
 现实中这样走是不成立的，不可能 11 人都站开球线附近，连个捡球的人都没有。
 
-![搞定](http://keithmo.me/img/game/blood-bowl2/challenges/10-dwarfs-can-also-do-it-5.jpg)
+![搞定](http://keithmo.me/img/game/blood-bowl/bb2le/challenges/10-dwarfs-can-also-do-it-5.jpg)
 
 ---
 
@@ -351,7 +352,4 @@ Blitzer 闪击完不跟进，闪避出来走到上面，其他2人堵上剩下�
 
 玩下来最大的感受就是，高手跟我们玩的完全不是一个游戏……
 
----
-
-![微信打赏二维码](http://keithmo.me/img/wechat_reward_qrcode.png)
 

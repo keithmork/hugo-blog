@@ -1,0 +1,4 @@
+#!/bin/bash
+
+[[ -d dev ]] && rm -rf dev
+hugo server --buildDrafts --watch --destination dev --disableFastRender

@@ -9,7 +9,7 @@ tags:
 - JMeter
 categories:
 - 10000 Hours
-- Load Test
+- 性能测试工具
 ---
 
 
@@ -397,8 +397,3 @@ Graph - **`Response Times - $transaction`**, Span: `4`
 参考：
 
 > https://grafana.com/dashboards/3351
-> 
-> ---
-
-![微信打赏二维码](http://keithmo.me/img/wechat_reward_qrcode.png)
-

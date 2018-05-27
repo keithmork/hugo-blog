@@ -1,4 +1,3 @@
 #!/bin/bash
 
-rm -rf dev
-hugo server --buildDrafts --watch --destination dev --disableFastRender
+hugo server --disableFastRender

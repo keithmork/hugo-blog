@@ -4,11 +4,10 @@ title: 'nGrinder 改造 - 在详细报告里增加更多统计项'
 date: 2018-03-01T02:25:25+08:00
 draft: false
 tags:
-- Performance
-- Load Test
 - nGrinder
 categories:
 - 10000 Hours
+- 性能测试工具
 ---
 
 
@@ -351,9 +350,4 @@ mvn -Dmaven.test.skip=true clean package
 英文界面
 
 ![详细测试结果截图-英文](http://keithmo.me/img/post/2018/02/28/ngrinder-report-en.jpg)
-
----
-
-![微信打赏二维码](http://keithmo.me/img/wechat_reward_qrcode.png)
-
 
