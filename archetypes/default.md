@@ -9,7 +9,7 @@ categories: []
 
 hiddenFromHomePage: false
 hideHeaderAndFooter: false
-oldInfoWarning: false
+#enableOutdatedInfoWarning: false
 #reward: false
 #comment: false
 ---

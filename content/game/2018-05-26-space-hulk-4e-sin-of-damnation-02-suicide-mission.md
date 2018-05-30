@@ -8,6 +8,8 @@ tags:
 - Games Workshop
 categories:
 - Games
+
+hiddenfromhomepage: true
 ---
 
 

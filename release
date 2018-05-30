@@ -1,7 +1,5 @@
 #!/bin/bash
 
-push_to_github=${1:-false}
-
 if [[ -d public ]]; then
     GLOBIGNORE=*.git
     rm -rf -v public/*
@@ -9,9 +7,9 @@ fi
 
 hugo
 
-if [[ "${push_to_github}" == "true" ]]; then
+if [[ -n "$1" ]]; then
     cd public
     git add -A
-    git commit -m 'new publish'
+    git commit -m "$1"
     git push
 fi

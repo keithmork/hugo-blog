@@ -9,6 +9,7 @@ tags:
 categories:
 - Games
 
+hiddenfromhomepage: true
 ---
 
 
@@ -307,7 +308,7 @@ Blitzer 闪击完不跟进，闪避出来走到上面，其他2人堵上剩下�
 
 ---
 
-### 10. Dwarfs can also do it! - 矮人也行
+### 10. Dwarfs can also do it! - 连矮人都行！
 
 - 目标：达阵。
 - 骰子数纪录：22

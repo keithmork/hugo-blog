@@ -3,14 +3,15 @@ slug: {{ .TranslationBaseName }}
 title: '{{ replace .TranslationBaseName "-" " " | title }}'
 date: {{ .Date }}
 draft: true
-tags: []
+tags:
+#- Games Workshop
 categories:
 - Games
 #author: ''
 
-hiddenFromHomePage: false
+hiddenFromHomePage: true
 hideHeaderAndFooter: false
-#oldInfoWarning: false
+#enableOutdatedInfoWarning: false
 #reward: false
 #comment: false
 ---

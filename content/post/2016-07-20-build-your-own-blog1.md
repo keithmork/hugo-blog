@@ -92,7 +92,7 @@ git config --global user.email "keith.mork@gmail.com"
 
 ---
 
-## 使用静态网页生成器搭建站点
+## 使用静态网站生成器搭建站点
 
 个人网站/博客通常只需要简单的静态页面，[这类工具](https://www.staticgen.com/) 正好可以把 Markdown 文档转换成网页，非常方便。
 
@@ -450,8 +450,6 @@ hugo server --buildDrafts --destination dev --disableFastRender
 ```sh
 #!/bin/bash
 
-push_to_github=${1:-false}
-
 if [[ -d public ]]; then
     GLOBIGNORE=*.git
     rm -rf -v public/*
@@ -459,10 +457,10 @@ fi
 
 hugo
 
-if [[ "${push_to_github}" == "true" ]]; then
+if [[ -n "$1" ]]; then
     cd public
     git add -A
-    git commit -m 'new publish'
+    git commit -m "$1"
     git push
 fi
 ```

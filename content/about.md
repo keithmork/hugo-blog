@@ -1,8 +1,5 @@
 ---
 title: About
-menu: main
-meta: 'false'
-weight: 100
 ---
 
 ### 关于作者

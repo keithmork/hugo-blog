@@ -2,13 +2,15 @@
 
 baseURL: http://keithmo.me/
 title: Haunted Hovel - 闹鬼小屋
+#copyright: ''            # default: author.name
+
 theme: even
 # https://themes.gohugo.io/hugo-theme-even/
 
 #disqusShortname: keithmo  # Disqus shortname
 googleAnalytics: UA-81240089-1  # Google Analytics ID
 
-languageCode: zh_CN
+languageCode: zh-cn
 defaultContentLanguage: zh-cn
 #defaultContentLanguageInSubdir: false
 hasCJKLanguage: true
@@ -25,7 +27,7 @@ paginate: 10
 
 frontmatter:
   date: ['date', ':filename', ':default']
-  lastmod: [':git', ':fileModTime', ':default']
+  lastmod: ['lastmod', ':git', ':fileModTime', ':default']
 
 
 ### PERMA LINKS ###
@@ -40,8 +42,7 @@ permalinks:
 # http://gohugo.io/variables/site/
 
 author:
-  name: Keith Mo       # Author name
-  github: keithmork     # Github username
+  name: Keith Mo  # <meta name="author" content="">
 
 sitemap:
   changefreq: weekly
@@ -71,6 +72,10 @@ menu:
       weight: 50
       identifier: games
       url: /game/
+    - name: About
+      weight: 100
+      identifier: about
+      url: /about
 
 params:
   version: 3.x  # Used to give a friendly message when you have an incompatible update
@@ -79,9 +84,9 @@ params:
   since: 2016
 
   # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
-  #logoTitle:         # default: the title value    # 默认值: 上面设置的title值
-  keywords: ['load testing', 'tuning', '性能测试', '调优']
-  description: 记录性能测试和调优的心得。
+  #logoTitle: ''        # default: the title value    # 默认值: 上面设置的title值
+  keywords: ['load testing', 'tuning', '性能测试', '调优']  # <meta name="keywords" content="">
+  description: 记录性能测试和调优的心得。  # <meta name="description" content="">
 
   # paginate of archives, tags and categories             # 归档、标签、分类每页显示的文章数目，建议修改为一个较大的值
   archivePaginate: 20
@@ -105,15 +110,13 @@ params:
   linkToMarkDown: false    # Only effective when hugo will output .md files.           # 链接到markdown原始文件（仅当允许hugo生成markdown文件时有效）
   contentCopyright: '<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>'
 
-  oldInfoWarning: true
-
   #changyanAppid: ""        # Changyan app id             # 畅言
   #changyanAppkey: ""       # Changyan app key
   #livereUID: ""            # LiveRe UID                  # 来必力
   #baidu_push: false        # baidu push                  # 百度
   #baidu_analytics: ""      # Baidu Analytics
-  #baidu_verification: ""   # Baidu Verification
-  #google_verification: ''  # Google_Verification
+  #baidu_verification: ""   # Baidu Verification  # <meta name="baidu-site-verification" content="" />
+  google_verification: '0a3HFkiNXuBV7zv3VJQyVVHctAFi3N6wP3KO6o8vErw'  # Google_Verification  # <meta name="google-site-verification" content="" />
 
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
@@ -128,10 +131,17 @@ params:
     fancyboxCss: '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">'
     gitmentJS: '<script src="https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.min.js" crossorigin="anonymous"></script>'
     gitmentCSS: '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css" crossorigin="anonymous">'
-    #gitalkJS: '<script src="https://cdn.jsdelivr.net/npm/gitalk@1.2.2/dist/gitalk.min.js" integrity="sha256-DcjhdbufsHMHflFjZtKNFnPKOAL2ybOxGcPOR4MtnJg=" crossorigin="anonymous"></script>'
-    #gitalkCSS: '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.2.2/dist/gitalk.css" integrity="sha256-rJVe5uyYRXdLM+Kkoj7JtN+9qI0bZTxkYTaNWODpg7U=" crossorigin="anonymous">'
-    timeagoJS: '<script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/3.0.2/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>'
-    #timeagoLocaleJS: '<script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/3.0.2/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>'
+    gitalkJS: '<script src="https://cdn.jsdelivr.net/npm/gitalk@1.2.2/dist/gitalk.min.js" integrity="sha256-DcjhdbufsHMHflFjZtKNFnPKOAL2ybOxGcPOR4MtnJg=" crossorigin="anonymous"></script>'
+    gitalkCSS: '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.2.2/dist/gitalk.css" integrity="sha256-rJVe5uyYRXdLM+Kkoj7JtN+9qI0bZTxkYTaNWODpg7U=" crossorigin="anonymous">'
+    timeagoJS: '<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>'
+    timeagoLocalesJS: '<script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>'
+
+  # Display a message at the beginning of an article to warn the readers that it's content may be outdated.
+  # 在文章开头显示提示信息，提醒读者文章内容可能过时。
+  outdatedInfoWarning:
+    enable: true
+    hint: 30        # Display hint if the last modified time is more than these days ago.    # 如果文章最后更新于这天数之前，显示提醒
+    warn: 180       # Display warning if the last modified time is more than these days ago.    # 如果文章最后更新于这天数之前，显示警告
 
   gitment:          # Gitment is a comment system based on GitHub issues. see https://github.com/imsun/gitment
     owner: keithmork              # Your GitHub ID
