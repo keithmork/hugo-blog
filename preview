@@ -1,3 +1,9 @@
 #!/bin/bash
 
+if [[ -d public ]]; then
+    GLOBIGNORE=*.git
+    rm -rf -v public/*
+fi
+
+hugo
 hugo server --disableFastRender

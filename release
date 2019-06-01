@@ -12,4 +12,8 @@ if [[ -n "$1" ]]; then
     git add -A
     git commit -m "$1"
     git push
+else
+    echo
+    echo "[WARN] Files will NOT be uploaded to Github without adding comments."
+    echo "Usage: $(basename "$0") COMMIT_COMMENTS"
 fi

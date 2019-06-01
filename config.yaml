@@ -17,7 +17,7 @@ hasCJKLanguage: true
 
 enableEmoji: true
 enableGitInfo: true
-#enableRobotsTXT: true
+enableRobotsTXT: true
 # https://gohugo.io/templates/robots/
 
 metaDataFormat: yaml
@@ -29,6 +29,10 @@ frontmatter:
   date: ['date', ':filename', ':default']
   lastmod: ['lastmod', ':git', ':fileModTime', ':default']
 
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
 
 ### PERMA LINKS ###
 # https://gohugo.io/content-management/urls/#canonicalization
@@ -60,20 +64,24 @@ menu:
       weight: 20
       identifier: archives
       url: /post/
-    - name: Tags
+    - name: Series
       weight: 30
-      identifier: tags
-      url: /tags/
+      identifier: series
+      url: /series/
     - name: Categories
       weight: 40
       identifier: categories
       url: /categories/
-    - name: Games
+    - name: Tags
       weight: 50
+      identifier: tags
+      url: /tags/
+    - name: Games
+      weight: 60
       identifier: games
       url: /game/
     - name: About
-      weight: 100
+      weight: 200
       identifier: about
       url: /about
 
@@ -108,7 +116,7 @@ params:
 
   postMetaInFooter: true   # contain author, lastMod, markdown link, license           # 包含作者，上次修改时间，markdown链接，许可信息
   linkToMarkDown: false    # Only effective when hugo will output .md files.           # 链接到markdown原始文件（仅当允许hugo生成markdown文件时有效）
-  contentCopyright: '<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a>'
+  contentCopyright: '<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by-nc/3.0/88x31.png" /></a>'
 
   #changyanAppid: ""        # Changyan app id             # 畅言
   #changyanAppkey: ""       # Changyan app key
@@ -140,8 +148,8 @@ params:
   # 在文章开头显示提示信息，提醒读者文章内容可能过时。
   outdatedInfoWarning:
     enable: true
-    hint: 30        # Display hint if the last modified time is more than these days ago.    # 如果文章最后更新于这天数之前，显示提醒
-    warn: 180       # Display warning if the last modified time is more than these days ago.    # 如果文章最后更新于这天数之前，显示警告
+    hint: 30        # Display a hint if the last modified time is more than these days ago.    # 如果文章最后更新于这天数之前，显示提醒
+    warn: 180       # Display a warning if the last modified time is more than these days ago.    # 如果文章最后更新于这天数之前，显示警告
 
   gitment:          # Gitment is a comment system based on GitHub issues. see https://github.com/imsun/gitment
     owner: keithmork              # Your GitHub ID
@@ -176,8 +184,8 @@ params:
 
   social:                                         # 社交链接
     a-github: https://github.com/keithmork
-    b-douban: https://www.douban.com/people/133443683/
-    #c-zhihu: http://localhost:1313
+    b-douban: https://www.douban.com/people/keithmo/
+    c-zhihu: https://www.zhihu.com/people/keithmork
     #d-linkedin: http://localhost:1313
     #e-email: 'mailto:keithmork@gmail.com'
     #f-weibo: http://localhost:1313

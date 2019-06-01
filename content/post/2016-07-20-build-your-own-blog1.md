@@ -10,10 +10,12 @@ tags:
 - Hugo
 - GitHub
 - Git
+series:
+- 如何搭建技术博客
 ---
 
-更新：
-
+> 更新：
+>
 - 2018-05-26：主题换成 Even，补充多处内容。
 - 2018-02-11：主题换成 Kiera。
 
@@ -148,8 +150,8 @@ $ tree
 └── themes  # 主题
 ```
 
-> https://gohugo.io/commands/hugo_new_site/  
-> https://gohugo.io/getting-started/directory-structure/  
+> https://gohugo.io/commands/hugo_new_site/   
+https://gohugo.io/getting-started/directory-structure/  
 
 ---
 
@@ -189,7 +191,7 @@ theme: even
 googleAnalytics: XXX  # Google Analytics ID
 # 多数国外主题只支持 Google 的站点统计，Even 作为国人开发的主题，还支持不蒜子和百度统计。
 
-defaultContentLanguage: zh-cn  # 默认 en，文章内容的默认编码，必须用 "-" 和小写。有些主题支持多语言，这里的设置会改变菜单和按钮的显示语言。
+defaultContentLanguage: zh-cn  # 默认 en，文章内容的默认编码，必须用小写字母和用 "-" 连接。有些主题支持多语言，这里的设置会改变菜单和按钮的显示语言。
 #defaultContentLanguageInSubdir: false  # 如果站点支持多语言，这选项为 true 时，/ 会重定向到对应的语言版本，如 /en/、/zh-cn/ 等。
 hasCJKLanguage: true  # 文章内容是否有中日韩文，会影响字数统计。
 
@@ -275,8 +277,8 @@ categories: []
 
 另外 Even 主题还配置了一些特有的参数，参见它的 [默认模板](https://github.com/olOwOlo/hugo-theme-even/blob/master/archetypes/default.md)。
 
-> https://gohugo.io/content-management/archetypes/  
-> https://gohugo.io/variables/files/   
+> https://gohugo.io/content-management/archetypes/    
+https://gohugo.io/variables/files/   
 
 ---
 
@@ -462,6 +464,10 @@ if [[ -n "$1" ]]; then
     git add -A
     git commit -m "$1"
     git push
+else
+    echo
+    echo "[WARN] Files will NOT be uploaded to Github without adding comments."
+    echo "Usage: $(basename "$0") COMMIT_COMMENTS"
 fi
 ```
 
