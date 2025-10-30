@@ -1,6 +1,6 @@
 # http://gohugo.io/getting-started/configuration/#yaml-configuration
 
-baseURL: http://keithmo.me/
+baseURL: http://keithmo.github.io/
 title: Haunted Hovel - 闹鬼小屋
 #copyright: ''            # default: author.name
 
@@ -46,7 +46,7 @@ permalinks:
 # http://gohugo.io/variables/site/
 
 author:
-  name: Keith Mo  # <meta name="author" content="">
+  name: MGW  # <meta name="author" content="">
 
 sitemap:
   changefreq: weekly
